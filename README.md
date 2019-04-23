@@ -9,9 +9,9 @@
 
 ## Login as admin
 
-admin's mail: admin@gmail.com
+Admin's mail: admin@gmail.com
 
-admin's password: password
+Admin's password: password
 
 ## Setting the environment
 
@@ -23,7 +23,7 @@ git clone https://github.com/moh833/Gym-website.git
 cd gym
 ```
 
-###[Create virtual environment and run it](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/)
+### [Create virtual environment and run it](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/)
 
 Install requirements
 
