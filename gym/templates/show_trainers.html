@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div class="content-section">
+        <h2 class="text-center">Number of trainers ({{ num_of_students }})</h2>
+        {% if rate %}
+        <h2 class="text-center">Your Rate is ({{ rate }})</h2>
+        {% else %}
+        <h2 class="text-center">You havn't been rated yet.</h2>
+        {% endif %}
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Second Name</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for student in students %}
+                  <tr>
+                    <th scope="row">{{ student.id }}</th>
+                    <td>{{ student.fname }}</td>
+                    <td>{{ student.lname }}</td>
+                    <td>{{ student.phone }}</td>
+                    <td>{{ student.email }}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+    </div>
+{% endblock %}

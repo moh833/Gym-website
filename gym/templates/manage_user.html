@@ -1,0 +1,226 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-9">
+    <div class="content-section">
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Manage User</legend>
+          <div class="row">
+          <div class="form-group col-sm-6">
+            {{ form.id.label(class="form-control-label") }}
+            {% if form.id.errors %}
+              {{ form.id(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.id.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.id(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.email.label(class="form-control-label") }}
+            {% if form.email.errors %}
+              {{ form.email(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.email(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.fname.label(class="form-control-label") }}
+            {% if form.fname.errors %}
+              {{ form.fname(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.fname.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.fname(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.lname.label(class="form-control-label") }}
+            {% if form.lname.errors %}
+              {{ form.lname(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.lname.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.lname(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.phone.label(class="form-control-label") }}
+            {% if form.phone.errors %}
+              {{ form.phone(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.phone.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.phone(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.coach_view.label(class="form-control-label") }}
+            {% if form.coach_view.errors %}
+              {{ form.coach_view(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.coach_view.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.coach_view(class="form-control form-control") }}
+            {% endif %}
+          </div>
+
+          {% if user.sup_start %}
+          <div class="form-group col-md-4">
+            {{ form.sup_start_view.label(class="form-control-label") }}
+            {% if form.sup_start_view.errors %}
+              {{ form.sup_start_view(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.sup_start_view.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.sup_start_view(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="col-md-4 text-center mt-4 px-1">
+            <h2>{{ days_left }} days left</h2>
+          </div>
+          <div class="form-group col-md-4">
+            {{ form.sup_end_view.label(class="form-control-label") }}
+            {% if form.sup_end_view.errors %}
+              {{ form.sup_end_view(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.sup_end_view.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.sup_end_view(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          {% endif %}
+
+          <div class="form-group col-sm-6">
+            {{ form.change.label(class="form-control-label") }}
+            {% if form.change.errors %}
+              {{ form.change(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.change.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.change(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.discount.label(class="form-control-label") }}
+            {% if form.discount.errors %}
+              {{ form.discount(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.discount.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.discount(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.points.label(class="form-control-label") }}
+            {% if form.points.errors %}
+              {{ form.points(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.points.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.points(class="form-control form-control") }}
+            {% endif %}
+          </div>
+
+
+
+          <legend class="border-bottom mb-4 col-12">New Subscription</legend>
+          <div class="form-group col-sm-6">
+            {{ form.sup_start.label(class="form-control-label") }}
+            {% if form.sup_start.errors %}
+              {{ form.sup_start(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.sup_start.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.sup_start(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.coach.label(class="form-control-label") }}
+            {% if form.coach.errors %}
+              {{ form.coach(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.coach.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.coach(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.months.label(class="form-control-label") }}
+            {% if form.months.errors %}
+              {{ form.months(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.months.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.months(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          <div class="form-group col-sm-6">
+            {{ form.payment.label(class="form-control-label") }}
+            {% if form.payment.errors %}
+              {{ form.payment(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.payment.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.payment(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          {{ form.submit(class="btn btn-outline-dark") }}
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+{% endblock %}

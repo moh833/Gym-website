@@ -1,0 +1,149 @@
+body {
+  /*background: #fafafa;*/ /*background's color*/
+  /* background: #f9eff9;  */
+  background: #ededf1;
+  color: #333333; /*the color of the contents*/
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;  /*for the text in the navbar's links */
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;  /*for the hover in the navbar's links */
+}
+
+.content-section {       /*pretty much all the containers(posts, forms, etc)*/
+  background: #fff;
+  /* background: #b2aab5; */
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* .article-content {
+  white-space: pre-line;    
+} */
+
+/* .article-img {    
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+} */
+/* 
+.article-metadata {     for the part that has the username and the post's date in the posts
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+} */
+
+/* .article-svg {
+  width: 25px;        don't know
+  height: 25px;
+  vertical-align: middle;
+} */
+
+.account-img {
+  height: 125px;      
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+/* .account-heading {
+  font-size: 2.5rem;
+} */
+
+
+/* #logo-image {
+    max-width: 25%;
+    padding: 0px;
+    margin: -10px;
+    height: auto;
+} */
+
+#logo-image {
+  max-width: 60%;
+  padding: 0px;
+  margin: -5px;
+  height: auto;
+}
+
+
+
+.bg-gym {
+  background-color: #06184b;
+}
+
+
+
+footer, footer a:link, footer a:hover, footer a:active, footer a:visited {
+  color: #cbd5db;
+}
+
+a:link, a:hover, a:active, a:visited{
+  color: #333;
+}
+
+
+@media screen and (min-width: 401px) and (max-width: 650px) {  
+  footer  {
+    font-size: 0.9em; 
+  }
+  h1 {
+    font-size: 2.1em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 400px) {  
+  footer  {
+    font-size: .7em; 
+  }
+  body  {
+    font-size: 1em; 
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+}
+/* h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.0vh;
+} */
+
+/* p {
+  font-size: 2vmin;
+}  */
+
+/* s */
+/* @media screen and (min-width: 501px) and (max-width: 769px){  
+  body  {
+    font-size: 0.8em; 
+  }
+} */
+/* m */
+/* @media screen and (min-width: 993px) and (max-width: 1200px){  
+  body  {
+    font-size: 1em; 
+  }
+} */
+/* lg */
+/* @media screen and (min-width: 1201px){  
+  body  {
+    font-size: 1.6em; 
+  }
+} */
