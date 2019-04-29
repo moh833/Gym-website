@@ -67,6 +67,15 @@ def isuser():
 	return dict(is_user=False)
 	# return dict(is_user=isinstance(current_user, User))
 
+
+def get_coaches():
+	try:
+		employees = Employee.query.filter_by(role='coach').all()
+		return [('', 'Coach')] + [(str(emp.id), emp) for emp in employees]
+	except:
+		return [('', 'Coach')]
+
+
 @app.route('/')
 @app.route('/home')
 def home():
@@ -270,6 +279,7 @@ def manage_user(id):
 		flash('User\'s subscription has been updated', 'success')
 		return redirect(url_for('manage_user', id=id))
 	elif request.method == 'GET':
+		form.coach.choices = get_coaches()
 		if user.coach:
 			form.coach.default = user.coach.id
 		form.process()

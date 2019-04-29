@@ -24,15 +24,6 @@ choices = { 'gender' : [('', 'Gender'), ('male', 'Male'), ('female', 'Female')],
 
 birth_years = [('', 'Birth Year')] + [(str(x), str(x)) for x in range(2018, 1900, -1)]
 
-def get_coaches():
-	print('hoy')
-	try:
-		print('hey')
-		employees = Employee.query.filter_by(role='coach').all()
-		return [('', 'Coach')] + [(str(emp.id), emp) for emp in employees]
-	except:
-		return [('', 'Coach')]
-
 
 
 class RegistrationForm(FlaskForm):
@@ -183,7 +174,8 @@ class ManageUserForm(FlaskForm):
 
 	coach_view = StringField('Coach', render_kw={'disabled': 'true'})
 
-	coach = SelectField('Coach', validators=[DataRequired()], choices = get_coaches())
+	# choices for coach field added in the route
+	coach = SelectField('Coach', validators=[DataRequired()])
 	months = SelectField('Months', validators=[DataRequired()], choices=choices.get('months'))
 	payment = FloatField('Payment', validators=[DataRequired()])
 	change = FloatField('Change', render_kw={'disabled': 'true'})
