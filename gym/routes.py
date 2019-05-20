@@ -255,6 +255,7 @@ def manage_user(id):
 	if not user:
 		return redirect(url_for('search_user'))
 	days_left = 0
+	form.coach.choices = get_coaches()
 	if form.validate_on_submit():
 		p = app.config['FEES_MONTH'] * int(form.months.data)
 		if user.discount:
@@ -279,7 +280,6 @@ def manage_user(id):
 		flash('User\'s subscription has been updated', 'success')
 		return redirect(url_for('manage_user', id=id))
 	elif request.method == 'GET':
-		form.coach.choices = get_coaches()
 		if user.coach:
 			form.coach.default = user.coach.id
 		form.process()
