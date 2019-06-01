@@ -2,10 +2,10 @@
 
 ## A gym website with the following features
 
-* An admin account that can add emlpoyees and has acces to the database and can edit it
+* An admin account that can add employees and has access to the database and can edit it
 * Each employee account has features and limitations depends on his department
-* Trainers can trace thier subscription and rate thier coaches
-* Coaches has access to thier trainees contacts
+* Trainers can trace their subscription and rate their coaches
+* Coaches has access to their trainees contacts
 
 ## Login as admin
 
